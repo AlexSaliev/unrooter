@@ -1,3 +1,7 @@
+local right_border = 450
+local left_border = 100
+local y_position = 700
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("@render:", "use_fixed_fit_projection", { near = -1, far = 1 })
@@ -5,18 +9,21 @@ end
 
 function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then
-		print("Touch!")
 		for i, touchdata in ipairs(action.touch) do
-			local pos = vmath.vector3(touchdata.x, touchdata.y, 0)
+			local x = calculate_x_position(action.x)
+			local pos = vmath.vector3(x, y_position, 0)
 			factory.create("#factory", pos)
 		end
-	end
-	if action_id==hash("tap") and action.x and action.y then
+	elseif action_id == hash("tap") and action.x and action.y then
 		-- let game object follow mouse/touch movement
-		local x = action.x
-		if action.x >= 500 then x=500 end
-		if action.x <= 100 then x=100 end  
-		local pos = vmath.vector3(x, 700, 0)
+		local x = calculate_x_position(action.x)
+		local pos = vmath.vector3(x, y_position, 0)
 		go.set_position(pos)
 	end
+end
+
+function calculate_x_position(x) 
+	if x >= right_border then return right_border end
+	if x <= left_border then return left_border end  
+	return x 
 end
