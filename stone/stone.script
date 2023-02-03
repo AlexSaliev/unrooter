@@ -1,0 +1,10 @@
+
+
+function on_message(self, message_id, message, sender)
+	print("collision_response")
+	if message_id == hash("collision_response") then
+--		msg.post("main#gui", "add_score", {amount = score})
+		particlefx.play("#pickupstone")
+		go.delete()
+	end
+end
