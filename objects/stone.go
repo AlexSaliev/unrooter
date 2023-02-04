@@ -1,6 +1,6 @@
 components {
   id: "stone"
-  component: "/stone_old/stone_old.script"
+  component: "/objects/stone.script"
   position {
     x: 0.0
     y: 0.0

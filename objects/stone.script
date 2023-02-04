@@ -1,6 +1,7 @@
-local score = 500
+local speed = 150
 
 function update(self, dt)
+	print(p)
 	local p = go.get_position()
 	p.y = p.y + speed * dt
 	if p.y > 1200 then
@@ -10,10 +11,10 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("collision_response") then
-		if message.other_id == hash("/shovel") then
-			msg.post("main#gui", "gameover")
-		end
+	if message_id == hash("collision_response") and message.other_id == hash("/shovel") then
+		particlefx.play("#pickupstone")
+		print("test")
+		msg.post("main#gui", "gameover")
 		go.delete()
 	end
 end
