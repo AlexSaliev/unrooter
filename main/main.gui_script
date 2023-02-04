@@ -28,7 +28,8 @@ function on_message(self, message_id, message, sender)
 				"change_age", 
 				{ damage_object = self.current_age.damage_object, 
 				point_object = self.current_age.point_object,
-				speed = self.current_age.speed}
+				speed = self.current_age.speed,
+				points = self.current_age.points}
 			)
 		end
 	elseif message_id == hash("hit") then
@@ -41,7 +42,7 @@ function on_message(self, message_id, message, sender)
 			return
 		end
 		msg.post("gameover#gui", "gameover", {score = self.score})
-		msg.post("main:/ground/ground0#ground", "gameover")
+		msg.post(self.current_age.stop_ground, "gameover")
 		msg.post("main:/shovel#shovel", "gameover")
 		msg.post("background#sprite", "disable")
 		msg.post("default:/main#roots", "gameover")
