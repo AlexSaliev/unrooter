@@ -1,5 +1,4 @@
 function on_message(self, message_id, message, sender)
-	print(message.other_id)
 	if message_id == hash("collision_response") and message.other_id == hash("/shovel") then
 		particlefx.play("#pickupstone")
 		msg.post("main#gui", "gameover")
