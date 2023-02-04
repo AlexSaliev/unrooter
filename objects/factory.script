@@ -1,19 +1,23 @@
+local constants = require "main.constants"
 local frequency = 0.5
 local bonus_prob = 0.33
 local min_x = 50
 local max_x = 450
 
-
 function init(self)
 	self.pause =true
 	self.timer = 1/frequency
+	local current_age = constants.CURRENT_AGE
+	self.damage_object = constants.AGES[current_age].damage_object
+	self.point_object = constants.AGES[current_age].point_object
 	-- make the game deterministic
 	math.randomseed(0)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("update_status") then
-		self.pause = message.status
+	if message_id == hash("change_age") then
+		self.damage_object = message.damage_object
+		self.point_object = message.point_object
 	end
 end
 
@@ -26,9 +30,9 @@ function update(self, dt)
 		self.timer = 1/frequency
 		local p = go.get_position()
 		p.x = vmath.lerp(math.random(), min_x, max_x)
-		local component = "#stone"
+		local component = self.damage_object
 		if math.random() < bonus_prob then
-			component = "#nokia"
+			component = self.point_object
 		end
 		factory.create(component, p)
 	end

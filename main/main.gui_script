@@ -1,8 +1,11 @@
+local constants = require "main.constants"
+
 function init(self)
 	self.lives = 3
 	self.shovels = { lives_2 = "Shovel 2", lives_1 = "Shovel 3" }
 	self.score = 0
 	self.score_node = gui.get_node("score")
+	self.current_age = constants.CURRENT_AGE
 	msg.post(".", "acquire_input_focus")
 end
 
@@ -14,9 +17,16 @@ function on_message(self, message_id, message, sender)
 		self.score = self.score + amount
 		gui.set_text(self.score_node, string.format("%06d",self.score))
 		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
-		if self.score >= 500 then
-			msg.post("main:/factory#factory", "update_status", {status=false})
-			msg.post("main:/factory2#factory2", "update_status", {status=true})
+		if self.score >= constants.AGES[self.current_age].minimal_point 
+		and constants.AGES[self.current_age].next ~= "" then
+			print("change age to "..constants.AGES[self.current_age].next)
+			self.current_age = constants.AGES[self.current_age].next
+			msg.post(
+				"main:/factory#factory", 
+				"change_age", 
+				{ damage_object = constants.AGES[self.current_age].damage_object, 
+				point_object = constants.AGES[self.current_age].point_object}
+			)
 			msg.post("main:/ground/ground0#ground", "update_status", {status=false})
 			msg.post("main:/ground2/ground0#ground", "update_status", {status=true})
 		end
@@ -32,7 +42,6 @@ function on_message(self, message_id, message, sender)
 		msg.post("gameover#gui", "gameover", {score = self.score})
 		msg.post("main:/ground/ground0#ground", "gameover")
 		msg.post("main:/shovel#shovel", "gameover")
-		msg.post("main:/artifact#artifact", "gameover")
 		msg.post("background#sprite", "disable")
 		msg.post("default:/main#roots", "gameover")
 	end
