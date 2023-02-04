@@ -42,7 +42,7 @@ nodes {
   }
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
-  texture: "main/Pause btn"
+  texture: "main/pause_button"
   id: "pause"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE

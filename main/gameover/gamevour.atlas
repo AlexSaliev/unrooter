@@ -3,11 +3,11 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/Replay btn_pressed.png"
+  image: "/assets/images/replay_button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/assets/images/Replay btn.png"
+  image: "/assets/images/replay_pressed_button.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

@@ -2,7 +2,7 @@ local constants = require "main.constants"
 
 function init(self)
 	self.lives = 3
-	self.shovels = { lives_2 = "Shovel 2", lives_1 = "Shovel 3" }
+	self.shovels = { lives_2 = "shovel_2", lives_1 = "shovel_3" }
 	self.score = 0
 	self.score_node = gui.get_node("score")
 	self.current_age = constants.CURRENT_AGE
