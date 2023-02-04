@@ -1,8 +1,4 @@
-script: "/main/main.gui_script"
-fonts {
-  name: "score"
-  font: "/fonts/score.font"
-}
+script: "/main/roots.gui_script"
 textures {
   name: "main"
   texture: "/main/main.atlas"
@@ -15,8 +11,8 @@ background_color {
 }
 nodes {
   position {
-    x: 464.0
-    y: 913.0
+    x: 456.0
+    y: 86.0
     z: 0.0
     w: 1.0
   }
@@ -27,9 +23,9 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.22
+    y: 0.22
+    z: 0.22
     w: 1.0
   }
   size {
@@ -44,40 +40,30 @@ nodes {
     z: 1.0
     w: 1.0
   }
-  type: TYPE_TEXT
+  type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
-  text: "000000"
-  font: "score"
-  id: "score"
+  texture: "main/Pause btn"
+  id: "pause"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
   adjust_mode: ADJUST_MODE_FIT
-  line_break: false
   layer: ""
   inherit_alpha: true
+  outerBounds: PIEBOUNDS_ELLIPSE
+  innerRadius: 0.0
+  perimeterVertices: 10
+  pieFillAngle: 360.0
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
   alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
   template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
+  size_mode: SIZE_MODE_AUTO
   custom_type: 0
   enabled: true
   visible: true
 }
 material: "/builtins/materials/gui.material"
-adjust_reference: ADJUST_REFERENCE_LEGACY
+adjust_reference: ADJUST_REFERENCE_PARENT
 max_nodes: 512

@@ -3,6 +3,7 @@ function init(self)
 	self.shovels = { lives_2 = "Shovel 2", lives_1 = "Shovel 3" }
 	self.score = 0
 	self.score_node = gui.get_node("score")
+	msg.post(".", "acquire_input_focus")
 end
 
 function on_message(self, message_id, message, sender)
@@ -23,6 +24,6 @@ function on_message(self, message_id, message, sender)
 		msg.post("main:/shovel#shovel", "gameover")
 		msg.post("main:/artifact#artifact", "gameover")
 		msg.post("background#sprite", "disable")
-		gui.set_enabled(self.score_node, false)
+		gui.set_enabled(self.pause_button, false)
 	end
 end

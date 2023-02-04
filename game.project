@@ -6,7 +6,7 @@ developer = Ururu Games
 dependencies = 
 
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /main/roots.collectionc
 
 [input]
 game_binding = /input/game.input_bindingc
