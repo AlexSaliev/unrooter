@@ -1,7 +1,8 @@
+local score = 5
+
 function on_message(self, message_id, message, sender)
-	print("collision_response: stone")
 	if message_id == hash("collision_response") then
-		particlefx.play("#pickupstone")
+		msg.post("main#gui", "add_score", {amount = score})
 		go.delete()
 	end
 end
