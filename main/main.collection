@@ -104,7 +104,7 @@ instances {
   prototype: "/objects/factory.go"
   position {
     x: 35.0
-    y: 39.0
+    y: -50.0
     z: 0.5
   }
   rotation {
