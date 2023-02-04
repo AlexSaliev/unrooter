@@ -1,9 +1,13 @@
-local speed = 150
+local constants = require "main.constants"local speed = 150
 local score = 2000
+
+function init(self)
+	self.speed = constants.speed
+end
 
 function update(self, dt)
 	local p = go.get_position()
-	p.y = p.y + speed * dt
+	p.y = p.y + self.speed * dt
 	if p.y > 1200 then
 		go.delete()
 	end
