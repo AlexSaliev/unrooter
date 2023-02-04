@@ -1,7 +1,8 @@
 local frequency = 0.5
-local bonus_prob = 0.2
+local bonus_prob = 0.3
 local min_x = 10
 local max_x = 400
+
 
 function init(self)
 	self.timer = 1/frequency
@@ -17,7 +18,7 @@ function update(self, dt)
 		p.x = vmath.lerp(math.random(), min_x, max_x)
 		local component = "#stone"
 		if math.random() < bonus_prob then
-			component = "#nokia"
+			component = "#bones"
 		end
 		factory.create(component, p)
 	end
