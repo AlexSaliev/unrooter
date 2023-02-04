@@ -19,7 +19,10 @@ function on_message(self, message_id, message, sender)
 		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
 		if self.score >= constants.AGES[self.current_age].minimal_point 
 		and constants.AGES[self.current_age].next ~= "" then
-			print("change age to "..constants.AGES[self.current_age].next)
+			msg.post(constants.AGES[self.current_age].stop_ground, "update_status", { status = false })
+			msg.post(constants.AGES[self.current_age].start_ground, "update_status", { status = true })
+
+			print("change age from"..self.current_age.." to "..constants.AGES[self.current_age].next)
 			self.current_age = constants.AGES[self.current_age].next
 			msg.post(
 				"main:/factory#factory", 
@@ -27,8 +30,6 @@ function on_message(self, message_id, message, sender)
 				{ damage_object = constants.AGES[self.current_age].damage_object, 
 				point_object = constants.AGES[self.current_age].point_object}
 			)
-			msg.post("main:/ground/ground0#ground", "update_status", {status=false})
-			msg.post("main:/ground2/ground0#ground", "update_status", {status=true})
 		end
 	elseif message_id == hash("hit") then
 		local damage = message.damage
