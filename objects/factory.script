@@ -11,7 +11,6 @@ function init(self)
 	self.damage_object = constants.AGES[current_age].damage_object
 	self.point_object = constants.AGES[current_age].point_object
 	self.speed = constants.AGES[current_age].speed
-	self.points = constants.AGES[current_age].points
 	-- make the game deterministic
 	math.randomseed(0)
 end
@@ -21,7 +20,6 @@ function on_message(self, message_id, message, sender)
 		self.damage_object = message.damage_object
 		self.point_object = message.point_object
 		self.speed = message.speed
-		self.points = message.points
 	end
 end
 
@@ -34,11 +32,15 @@ function update(self, dt)
 		self.timer = 1/frequency
 		local p = go.get_position()
 		p.x = vmath.lerp(math.random(), min_x, max_x)
-		local component = self.damage_object
+		
 		if math.random() < bonus_prob then
-			component = self.point_object
+			local component = self.point_object.name
+			print("Create "..component.." with speed "..self.speed.." and points "..self.point_object.points)
+			factory.create(component, p, nil, { speed = self.speed, points = self.point_object.points })
+		else 
+			local component = self.damage_object.name
+			print("Create "..component.." with speed "..self.speed.." and hit "..self.damage_object.hit)
+			factory.create(component, p, nil, { speed = self.speed, hit = self.damage_object.hit })
 		end
-		print("Create "..component.." with speed "..self.speed)
-		factory.create(component, p, nil, { speed = self.speed, points = self.points })
 	end
 end
