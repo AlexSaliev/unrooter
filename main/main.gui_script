@@ -5,7 +5,7 @@ function init(self)
 	self.shovels = { lives_2 = "shovel_2", lives_1 = "shovel_3" }
 	self.score = 0
 	self.score_node = gui.get_node("score")
-	self.current_age = constants.CURRENT_AGE
+	self.current_age = constants.AGES[constants.CURRENT_AGE]
 	msg.post(".", "acquire_input_focus")
 end
 
@@ -17,18 +17,18 @@ function on_message(self, message_id, message, sender)
 		self.score = self.score + amount
 		gui.set_text(self.score_node, string.format("%06d",self.score))
 		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
-		if self.score >= constants.AGES[self.current_age].minimal_point 
-		and constants.AGES[self.current_age].next ~= "" then
-			msg.post(constants.AGES[self.current_age].stop_ground, "update_status", { status = false })
-			msg.post(constants.AGES[self.current_age].start_ground, "update_status", { status = true })
+		if self.score >= self.current_age.minimal_point and self.current_age.next ~= "" then
+			msg.post(self.current_age.stop_ground, "update_status", { status = false })
+			msg.post(self.current_age.start_ground, "update_status", { status = true })
 
-			print("change age from"..self.current_age.." to "..constants.AGES[self.current_age].next)
-			self.current_age = constants.AGES[self.current_age].next
+			print("change age to "..self.current_age.next)
+			self.current_age = constants.AGES[self.current_age.next]
 			msg.post(
 				"main:/factory#factory", 
 				"change_age", 
-				{ damage_object = constants.AGES[self.current_age].damage_object, 
-				point_object = constants.AGES[self.current_age].point_object}
+				{ damage_object = self.current_age.damage_object, 
+				point_object = self.current_age.point_object,
+				speed = self.current_age.speed}
 			)
 		end
 	elseif message_id == hash("hit") then

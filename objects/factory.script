@@ -10,6 +10,7 @@ function init(self)
 	local current_age = constants.CURRENT_AGE
 	self.damage_object = constants.AGES[current_age].damage_object
 	self.point_object = constants.AGES[current_age].point_object
+	self.speed = constants.AGES[current_age].speed
 	-- make the game deterministic
 	math.randomseed(0)
 end
@@ -18,6 +19,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("change_age") then
 		self.damage_object = message.damage_object
 		self.point_object = message.point_object
+		self.speed = message.speed
 	end
 end
 
@@ -34,6 +36,7 @@ function update(self, dt)
 		if math.random() < bonus_prob then
 			component = self.point_object
 		end
-		factory.create(component, p)
+		print("Create "..component.." with speed "..self.speed)
+		factory.create(component, p, nil, { speed = self.speed })
 	end
 end

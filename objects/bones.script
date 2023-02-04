@@ -1,9 +1,7 @@
 local constants = require "main.constants"
 local score = 2000
 
-function init(self)
-	self.speed = constants.speed
-end
+go.property("speed", 100)
 
 function update(self, dt)
 	local p = go.get_position()
