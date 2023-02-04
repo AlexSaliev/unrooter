@@ -62,7 +62,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "sprite"
+  id: "shovel_sprite"
   type: "sprite"
   data: "tile_set: \"/main/main.atlas\"\n"
   "default_animation: \"Shovel\"\n"
