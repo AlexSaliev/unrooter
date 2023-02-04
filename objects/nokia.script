@@ -8,12 +8,13 @@ function update(self, dt)
 		go.delete()
 	end
 	go.set_position(p)
-	print(p)
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
-		msg.post("main#gui", "add_score", {amount = score})
+		if message.other_id == hash("/shovel") then
+			msg.post("main#gui", "add_score", {amount = score})
+		end
 		go.delete()
 	end
 end

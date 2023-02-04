@@ -14,7 +14,6 @@ function update(self, dt)
 	if self.timer <= 0 then
 		self.timer = 1/frequency
 		local p = go.get_position()
-		print(p)
 		p.x = vmath.lerp(math.random(), min_x, max_x)
 		local component = "#nokia"
 		if math.random() < bonus_prob then
