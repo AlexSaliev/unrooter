@@ -1,5 +1,5 @@
 local speed = 150
-local score = 500
+local score = 100
 
 function update(self, dt)
 	local p = go.get_position()
