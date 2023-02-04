@@ -1,13 +1,14 @@
-local speed = -240
-local score = 5000
+local speed = 150
+local score = 500
 
 function update(self, dt)
 	local p = go.get_position()
 	p.y = p.y + speed * dt
-	if p.y < -32 then
+	if p.y > 1200 then
 		go.delete()
 	end
 	go.set_position(p)
+	print(p)
 end
 
 function on_message(self, message_id, message, sender)

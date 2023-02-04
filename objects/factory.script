@@ -1,0 +1,25 @@
+local frequency = 0.5
+local bonus_prob = 0.2
+local min_x = 10
+local max_x = 400
+
+function init(self)
+	self.timer = 1/frequency
+	-- make the game deterministic
+	math.randomseed(0)
+end
+
+function update(self, dt)
+	self.timer = self.timer - dt
+	if self.timer <= 0 then
+		self.timer = 1/frequency
+		local p = go.get_position()
+		print(p)
+		p.x = vmath.lerp(math.random(), min_x, max_x)
+		local component = "#nokia"
+		if math.random() < bonus_prob then
+			-- component = "#bonus_factory"
+		end
+		factory.create(component, p)
+	end
+end
