@@ -1,8 +1,12 @@
-local score = 5
+function init(self)
+	self.amount = 5
+end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
-		msg.post("main#gui", "add_score", {amount = score})
+		msg.post("main#gui", "add_score", {amount = self.amount})
+		go.delete()
+	elseif message_id == hash("gameover") then
 		go.delete()
 	end
 end

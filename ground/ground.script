@@ -18,3 +18,11 @@ function update(self, dt)
 		go.set_position(pos, p) 
 	end
 end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("gameover") then
+		for i, p in ipairs(pieces) do 
+			go.delete(p)
+		end
+	end
+end

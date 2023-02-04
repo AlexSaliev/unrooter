@@ -9,5 +9,11 @@ function on_message(self, message_id, message, sender)
 		self.score = self.score + message.amount
 		gui.set_text(self.score_node, string.format("%06d",self.score))
 		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
+	elseif message_id == hash("gameover") then
+		msg.post("gameover#gui", "gameover", {score = self.score})
+		msg.post("main:/ground/ground0#ground", "gameover")
+		msg.post("main:/shovel#shovel", "gameover")
+		msg.post("main:/artifact#artifact", "gameover")
+		gui.set_enabled(self.score_node, false)
 	end
 end
