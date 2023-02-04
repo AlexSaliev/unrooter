@@ -1,18 +1,20 @@
 -- ground.script
 local pieces = { "ground0", "ground1", "ground2", "ground3",
-"ground4", "ground5" } -- <1>
+"ground4", "ground5" } 
 
-function init(self) -- <2>
-	self.speed = 360  -- Speed in pixels/s
+function init(self) 
+	self.speed = 160  -- Speed in pixels/s
+	self.height = 310
+	self.screen_height = 960
 end
 
-function update(self, dt) -- <3>
-	for i, p in ipairs(pieces) do -- <4>
+function update(self, dt) 
+	for i, p in ipairs(pieces) do 
 		local pos = go.get_position(p)
-		if pos.y <= -228 then -- <5>
-			pos.y = 1368 + (pos.y + 228)
+		if pos.y >= self.screen_height + self.height then 
+			pos.y = -self.height
 		end
-		pos.y = pos.y - self.speed * dt -- <6>
-		go.set_position(pos, p) -- <7>
+		pos.y = pos.y + self.speed * dt 
+		go.set_position(pos, p) 
 	end
 end
