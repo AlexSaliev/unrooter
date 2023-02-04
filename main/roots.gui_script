@@ -17,6 +17,8 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("proxy_loaded") then
 		msg.post(sender, "enable")
+	elseif message_id == hash("gameover") then
+		gui.set_enabled(self.pause_node, false)
 	end
 end
 

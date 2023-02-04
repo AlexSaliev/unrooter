@@ -24,6 +24,6 @@ function on_message(self, message_id, message, sender)
 		msg.post("main:/shovel#shovel", "gameover")
 		msg.post("main:/artifact#artifact", "gameover")
 		msg.post("background#sprite", "disable")
-		gui.set_enabled(self.pause_button, false)
+		msg.post("default:/main#roots", "gameover")
 	end
 end
