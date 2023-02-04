@@ -1,6 +1,6 @@
 components {
-  id: "factory"
-  component: "/objects/factory.script"
+  id: "factory2"
+  component: "/objects/factory2.script"
   position {
     x: 0.0
     y: 0.0
@@ -14,9 +14,9 @@ components {
   }
 }
 embedded_components {
-  id: "nokia"
+  id: "bones"
   type: "factory"
-  data: "prototype: \"/objects/nokia.go\"\n"
+  data: "prototype: \"/objects/bones.go\"\n"
   "load_dynamically: false\n"
   ""
   position {

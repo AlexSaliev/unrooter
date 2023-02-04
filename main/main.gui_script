@@ -14,6 +14,10 @@ function on_message(self, message_id, message, sender)
 		self.score = self.score + amount
 		gui.set_text(self.score_node, string.format("%06d",self.score))
 		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
+		if self.score >= 500 then
+			msg.post("main:/factory#factory", "update_status", {status=false})
+			msg.post("main:/factory2#factory2", "update_status", {status=true})
+		end
 	elseif message_id == hash("hit") then
 		local damage = message.damage
 		self.lives = self.lives - damage

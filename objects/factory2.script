@@ -5,7 +5,8 @@ local max_x = 450
 
 
 function init(self)
-	self.pause =true
+	print(msg.url())
+	self.pause =false
 	self.timer = 1/frequency
 	-- make the game deterministic
 	math.randomseed(0)
@@ -16,6 +17,7 @@ function on_message(self, message_id, message, sender)
 		self.pause = message.status
 	end
 end
+
 
 function update(self, dt)
 	if not self.pause then 
@@ -28,7 +30,7 @@ function update(self, dt)
 		p.x = vmath.lerp(math.random(), min_x, max_x)
 		local component = "#stone"
 		if math.random() < bonus_prob then
-			component = "#nokia"
+			component = "#bones"
 		end
 		factory.create(component, p)
 	end
