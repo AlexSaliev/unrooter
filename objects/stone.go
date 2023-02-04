@@ -1,6 +1,6 @@
 components {
   id: "stone"
-  component: "/objects/stone.script"
+  component: "/objects/damage_object.script"
   position {
     x: 0.0
     y: 0.0

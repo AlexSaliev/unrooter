@@ -1,6 +1,6 @@
 components {
   id: "nokia"
-  component: "/objects/nokia.script"
+  component: "/objects/point_object.script"
   position {
     x: 0.0
     y: 0.0
