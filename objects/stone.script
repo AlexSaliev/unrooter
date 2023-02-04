@@ -1,4 +1,5 @@
 local speed = 150
+local damage = 1
 
 function update(self, dt)
 	local p = go.get_position()
@@ -11,8 +12,8 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") and message.other_id == hash("/shovel") then
-		print("test")
-		msg.post("main#gui", "gameover")
+		print("stone deals "..damage.." damage to the shovel")
+		msg.post("main#gui", "hit", { damage = damage })
 		go.delete()
 	end
 end

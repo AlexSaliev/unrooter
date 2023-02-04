@@ -8,13 +8,17 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("add_score") then
+		local amount = message.amount
+		print("player receives "..amount.." points")
 		local s = 1.2
-		self.score = self.score + message.amount
+		self.score = self.score + amount
 		gui.set_text(self.score_node, string.format("%06d",self.score))
 		gui.animate(self.score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
-	elseif message_id == hash("gameover") then
-		self.lives = self.lives - 1
-		if self.lives ~= 0 then
+	elseif message_id == hash("hit") then
+		local damage = message.damage
+		self.lives = self.lives - damage
+		print("shovel receives "..damage.." damages, current count of lives "..self.lives)
+		if self.lives > 0 then
 			local shovel_sprite_id = self.shovels["lives_"..self.lives]
 			msg.post("/shovel#shovel_sprite", "play_animation", {id = hash(shovel_sprite_id)})
 			return
@@ -24,6 +28,6 @@ function on_message(self, message_id, message, sender)
 		msg.post("main:/shovel#shovel", "gameover")
 		msg.post("main:/artifact#artifact", "gameover")
 		msg.post("background#sprite", "disable")
-		gui.set_enabled(self.pause_button, false)
+		msg.post("default:/main#roots", "gameover")
 	end
 end
