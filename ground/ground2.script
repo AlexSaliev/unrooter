@@ -6,7 +6,7 @@ function init(self)
 	self.speed = 160  -- Speed in pixels/s
 	self.height = 310
 	self.screen_height = 960
-	self.pause =false
+	self.pause = false
 	print(msg.url())
 end
 
