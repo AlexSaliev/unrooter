@@ -1,0 +1,19 @@
+local score = 500
+
+function update(self, dt)
+	local p = go.get_position()
+	p.y = p.y + speed * dt
+	if p.y > 1200 then
+		go.delete()
+	end
+	go.set_position(p)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		if message.other_id == hash("/shovel") then
+			msg.post("main#gui", "gameover")
+		end
+		go.delete()
+	end
+end

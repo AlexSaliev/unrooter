@@ -15,9 +15,9 @@ function update(self, dt)
 		self.timer = 1/frequency
 		local p = go.get_position()
 		p.x = vmath.lerp(math.random(), min_x, max_x)
-		local component = "#nokia"
+		local component = "#stone"
 		if math.random() < bonus_prob then
-			-- component = "#bonus_factory"
+			component = "#nokia"
 		end
 		factory.create(component, p)
 	end
