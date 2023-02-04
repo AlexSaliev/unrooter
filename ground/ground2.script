@@ -6,9 +6,14 @@ function init(self)
 	self.speed = 160  -- Speed in pixels/s
 	self.height = 310
 	self.screen_height = 960
+	self.pause =false
+	print(msg.url())
 end
 
 function update(self, dt) 
+	if not self.pause then
+		return
+	end
 	for i, p in ipairs(pieces) do 
 		local pos = go.get_position(p)
 		if pos.y >= self.screen_height + self.height then 
@@ -20,6 +25,9 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+	if message_id == hash("update_status") then
+		self.pause = message.status
+	end
 	if message_id == hash("gameover") then
 		for i, p in ipairs(pieces) do 
 			go.delete(p)

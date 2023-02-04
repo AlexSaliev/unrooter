@@ -4,7 +4,7 @@ embedded_instances {
   id: "ground0"
   data: "components {\n"
   "  id: \"ground\"\n"
-  "  component: \"/ground/ground.script\"\n"
+  "  component: \"/ground/ground2.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -23,7 +23,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"Tile 1 \\\"\\n"
+  "default_animation: \\\"Ground 2 \\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -41,9 +41,9 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 275.0
-    y: 310.0
-    z: 0.0
+    x: 271.0
+    y: 760.0
+    z: 0.2
   }
   rotation {
     x: 0.0
@@ -52,8 +52,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.5
-    y: 2.5
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }
@@ -63,7 +63,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"Tile 2 \\\"\\n"
+  "default_animation: \\\"Ground 2.2 \\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -82,8 +82,8 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -330.0
-    z: 0.0
+    y: 10.0
+    z: 0.2
   }
   rotation {
     x: 0.0
@@ -92,8 +92,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.5
-    y: 2.5
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }
@@ -103,7 +103,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"Tile 3 \\\"\\n"
+  "default_animation: \\\"Ground 2.3 \\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -122,8 +122,8 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -970.0
-    z: 0.0
+    y: -739.0
+    z: 0.2
   }
   rotation {
     x: 0.0
@@ -132,8 +132,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.5
-    y: 2.5
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }
@@ -143,7 +143,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"Tile 1 \\\"\\n"
+  "default_animation: \\\"Ground 2 \\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -162,8 +162,8 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -1610.0
-    z: 0.0
+    y: -1490.0
+    z: 0.2
   }
   rotation {
     x: 0.0
@@ -172,8 +172,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.5
-    y: 2.5
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }
@@ -183,7 +183,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"Tile 2 \\\"\\n"
+  "default_animation: \\\"Ground 2.2 \\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -202,8 +202,8 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -2250.0
-    z: 0.0
+    y: -2244.0
+    z: 0.2
   }
   rotation {
     x: 6.123234E-17
@@ -212,8 +212,8 @@ embedded_instances {
     w: 3.7493994E-33
   }
   scale3 {
-    x: 2.5
-    y: 2.5
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }
@@ -223,7 +223,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/main/main.atlas\\\"\\n"
-  "default_animation: \\\"Tile 3 \\\"\\n"
+  "default_animation: \\\"Ground 2.3 \\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -242,8 +242,8 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -2890.0
-    z: 0.0
+    y: -2995.0
+    z: 0.2
   }
   rotation {
     x: 0.0
@@ -252,8 +252,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 2.5
-    y: 2.5
+    x: 1.5
+    y: 1.5
     z: 1.0
   }
 }

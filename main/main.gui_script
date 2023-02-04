@@ -17,6 +17,8 @@ function on_message(self, message_id, message, sender)
 		if self.score >= 500 then
 			msg.post("main:/factory#factory", "update_status", {status=false})
 			msg.post("main:/factory2#factory2", "update_status", {status=true})
+			msg.post("main:/ground/ground0#ground", "update_status", {status=false})
+			msg.post("main:/ground2/ground0#ground", "update_status", {status=true})
 		end
 	elseif message_id == hash("hit") then
 		local damage = message.damage
