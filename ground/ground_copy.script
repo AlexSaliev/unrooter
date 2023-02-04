@@ -1,0 +1,28 @@
+-- ground.script
+local pieces = { "ground0", "ground1", "ground2", "ground3",
+"ground4", "ground5" } 
+
+function init(self) 
+	self.speed = 160  -- Speed in pixels/s
+	self.height = 310
+	self.screen_height = 960
+end
+
+function update(self, dt) 
+	for i, p in ipairs(pieces) do 
+		local pos = go.get_position(p)
+		if pos.y >= self.screen_height + self.height then 
+			pos.y = -self.height
+		end
+		pos.y = pos.y + self.speed * dt 
+		go.set_position(pos, p) 
+	end
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("gameover") then
+		for i, p in ipairs(pieces) do 
+			go.delete(p)
+		end
+	end
+end
