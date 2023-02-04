@@ -14,6 +14,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("main:/ground/ground0#ground", "gameover")
 		msg.post("main:/shovel#shovel", "gameover")
 		msg.post("main:/artifact#artifact", "gameover")
+		msg.post("background#sprite", "disable")
 		gui.set_enabled(self.score_node, false)
 	end
 end

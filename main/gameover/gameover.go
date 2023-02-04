@@ -14,7 +14,7 @@ components {
   }
 }
 embedded_components {
-  id: "gameover_background"
+  id: "background"
   type: "sprite"
   data: "tile_set: \"/main/gameover/gamevour.atlas\"\n"
   "default_animation: \"gameover_background\"\n"

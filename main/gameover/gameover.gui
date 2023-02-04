@@ -7,6 +7,10 @@ fonts {
   name: "system_font"
   font: "/builtins/fonts/system_font.font"
 }
+textures {
+  name: "gamevour"
+  texture: "/main/gameover/gamevour.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -145,8 +149,8 @@ nodes {
 }
 nodes {
   position {
-    x: 131.0
-    y: 179.0
+    x: 141.0
+    y: 232.0
     z: 0.0
     w: 1.0
   }
@@ -157,13 +161,13 @@ nodes {
     w: 1.0
   }
   scale {
-    x: 1.0
-    y: 1.0
-    z: 1.0
+    x: 0.3
+    y: 0.3
+    z: 0.3
     w: 1.0
   }
   size {
-    x: 100.0
+    x: 200.0
     y: 100.0
     z: 0.0
     w: 1.0
@@ -174,36 +178,28 @@ nodes {
     z: 1.0
     w: 1.0
   }
-  type: TYPE_TEXT
+  type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  text: "Replay"
-  font: "system_font"
+  texture: "gamevour/Replay btn"
   id: "replay"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
-  outline {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  shadow {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
   adjust_mode: ADJUST_MODE_FIT
-  line_break: false
   layer: ""
   inherit_alpha: true
+  slice9 {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+  clipping_mode: CLIPPING_MODE_NONE
+  clipping_visible: true
+  clipping_inverted: false
   alpha: 1.0
-  outline_alpha: 1.0
-  shadow_alpha: 1.0
   template_node_child: false
-  text_leading: 1.0
-  text_tracking: 0.0
+  size_mode: SIZE_MODE_AUTO
   custom_type: 0
   enabled: true
   visible: true

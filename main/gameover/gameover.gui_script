@@ -2,7 +2,7 @@ function init(self)
 	disable_node("gameover")
 	disable_node("score")
 	disable_node("replay")
-	msg.post("#gameover_background", "disable")
+	msg.post("gameover#background", "disable")
 	msg.post(".", "acquire_input_focus")
 end
 
@@ -11,7 +11,7 @@ function on_message(self, message_id, message, sender)
 		enable_node("gameover")
 		enable_node("replay")
 		local score_node = enable_node("score")
-		msg.post("#gameover_background", "enable")
+		msg.post("gameover#background", "enable")
 		gui.set_text(score_node, string.format("%06d", message.score))
 		local s = 1.2
 		gui.animate(score_node, gui.PROP_SCALE, vmath.vector4(s, s, s, 0), gui.EASING_OUT, 0.1, 0.0, scale_down)
