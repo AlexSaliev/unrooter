@@ -35,14 +35,14 @@ nodes {
     w: 1.0
   }
   color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
+    x: 1.0
+    y: 1.0
+    z: 1.0
     w: 1.0
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "0"
+  text: "000000"
   font: "score"
   id: "score"
   xanchor: XANCHOR_NONE
