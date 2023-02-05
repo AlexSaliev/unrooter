@@ -2,6 +2,11 @@ go.property("speed", 100)
 go.property("speedup", 50)
 go.property("hit", 1)
 
+function init(self)
+	local rot = vmath.quat_rotation_z(vmath.lerp(math.random(), 0, math.pi * 2))
+	go.set_rotation(rot)
+end
+
 function update(self, dt)
 	local p = go.get_position()
 	p.y = p.y + self.speed * dt
