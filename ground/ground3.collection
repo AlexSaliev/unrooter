@@ -4,7 +4,7 @@ embedded_instances {
   id: "ground0"
   data: "components {\n"
   "  id: \"ground\"\n"
-  "  component: \"/ground/ground2.script\"\n"
+  "  component: \"/ground/ground3.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
