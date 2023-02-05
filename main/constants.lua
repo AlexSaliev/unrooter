@@ -14,7 +14,7 @@ OBJECT.AGES = {
 		next = "", 
 		speed = 250,
 		minimal_point = 1500, 
-		damage_object = { name = "#stone", hit = 1 }, 
+		damage_object = { name = "#bomb", hit = 2 }, 
 		point_object = { name = "#bones", points = 2000 },
 		stop_ground = "",
 		start_ground = ""
