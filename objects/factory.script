@@ -11,9 +11,27 @@ function init(self)
 	self.damage_object = constants.AGES[current_age].damage_object
 	self.point_object = constants.AGES[current_age].point_object
 	self.speed = constants.AGES[current_age].speed
+	self.speedup = constants.AGES[current_age].speedup
+	self.max_speed = constants.AGES[current_age].max_speed
+	self.components = {}
+	self.timer = timer.delay(5, true, speed_up)
 	-- make the game deterministic
 	math.randomseed(0)
 	print(msg.url())
+end
+
+function speed_up(self) 
+	if self.speed >= self.max_speed then
+		print("max speed for current age is reached: "..self.max_speed)
+		return
+	end
+	self.speed = self.speed + self.speedup
+	print("default speed is increased by "..self.speedup.." to "..self.speed..", max speed="..self.max_speed)
+	for _, component in ipairs(self.components) do
+		local url = msg.url(component)
+		print("url="..url)
+		msg.post(url, "speedup", { speedup = self.speedup })
+	end
 end
 
 function on_message(self, message_id, message, sender)
@@ -21,6 +39,8 @@ function on_message(self, message_id, message, sender)
 		self.damage_object = message.damage_object
 		self.point_object = message.point_object
 		self.speed = message.speed
+		self.speedup = message.speedup
+		self.max_speed = message.max_speed
 	end
 end
 
@@ -33,15 +53,18 @@ function update(self, dt)
 		self.timer = 1/frequency
 		local p = go.get_position()
 		p.x = vmath.lerp(math.random(), min_x, max_x)
-		
+
+		local component
 		if math.random() < bonus_prob then
-			local component = self.point_object.name
-			print("Create "..component.." with speed "..self.speed.." and points "..self.point_object.points)
-			factory.create(component, p, nil, { speed = self.speed, points = self.point_object.points })
+			local component_name = self.point_object.name
+			print("Create "..component_name.." with speed "..self.speed.." and points "..self.point_object.points.." and speedup "..self.speedup)
+			component = factory.create(component_name, p, nil, { speedup = self.speedup, speed = self.speed, points = self.point_object.points })
 		else 
-			local component = self.damage_object.name
-			print("Create "..component.." with speed "..self.speed.." and hit "..self.damage_object.hit)
-			factory.create(component, p, nil, { speed = self.speed, hit = self.damage_object.hit })
+			local component_name = self.damage_object.name
+			print("Create "..component_name.." with speed "..self.speed.." and hit "..self.damage_object.hit.." and speedup "..self.speedup)
+			component = factory.create(component_name, p, nil, { speedup = self.speedup, speed = self.speed, hit = self.damage_object.hit })
 		end
+
+		table.insert(self.components, component)
 	end
 end

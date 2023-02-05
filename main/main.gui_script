@@ -30,7 +30,9 @@ function on_message(self, message_id, message, sender)
 				"change_age", 
 				{ damage_object = self.current_age.damage_object, 
 				point_object = self.current_age.point_object,
-				speed = self.current_age.speed}
+				speed = self.current_age.speed,
+				speedup = self.current_age.speedup,
+				max_speed = self.current_age.max_speed}
 			)
 		end
 	elseif message_id == hash("hit") then

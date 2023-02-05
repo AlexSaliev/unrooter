@@ -1,4 +1,5 @@
 go.property("speed", 100)
+go.property("speedup", 50)
 go.property("points", 150)
 
 function update(self, dt)
@@ -16,5 +17,7 @@ function on_message(self, message_id, message, sender)
 			msg.post("main#gui", "add_score", {amount = self.points})
 		end
 		go.delete()
+	elseif message_id == hash("speedup") then
+		self.speed = self.speed + message.speedup
 	end
 end
