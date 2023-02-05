@@ -1,6 +1,6 @@
 local constants = require "main.constants"
 local frequency = 0.5
-local bonus_prob = 0.33
+local bonus_prob = 0.7
 local min_x = 50
 local max_x = 450
 
