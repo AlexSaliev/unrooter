@@ -50,7 +50,8 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "Game Over"
+  text: "\n"
+  ""
   font: "system_font"
   id: "gameover"
   xanchor: XANCHOR_NONE
@@ -84,8 +85,8 @@ nodes {
 }
 nodes {
   position {
-    x: 300.0
-    y: 500.0
+    x: 279.0
+    y: 504.0
     z: 0.0
     w: 1.0
   }
