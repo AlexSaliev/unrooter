@@ -19,7 +19,7 @@ OBJECT.AGES = {
 		max_speed = 1000,
 		speedup = 50,
 		minimal_point = 3000, 
-		damage_object = { name = "#bomb", hit = 2 }, 
+		damage_object = { name = "#bomb", hit = 1 }, 
 		point_object = { name = "#vase1", points = 1000 },
 		stop_ground = "main:/ground2/ground0#ground",
 		start_ground = "main:/ground3/ground0#ground"
@@ -30,7 +30,7 @@ OBJECT.AGES = {
 		max_speed = 1600,
 		speedup = 200,
 		minimal_point = 10000, 
-		damage_object = { name = "#stone", hit = 3 }, 
+		damage_object = { name = "#stone", hit = 1 }, 
 		point_object = { name = "#bones", points = 5000 },
 		stop_ground = "",
 		start_ground = ""
