@@ -1,9 +1,5 @@
 go.property("speed", 100)
-go.property("damage", 1)
-
-function init(self)
-	print(msg.url())
-end
+go.property("hit", 1)
 
 function update(self, dt)
 	local p = go.get_position()
@@ -17,8 +13,8 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") and message.other_id == hash("/shovel") then
 		sound.play("main:/factory#dig_stone", {delay = 0, gain = 1, pan = 0.0, speed = 1.0})
-		print("stone deals "..damage.." damage to the shovel")
-		msg.post("main#gui", "hit", { damage = self.damage })
+		print("deals "..self.hit.." damage to the shovel")
+		msg.post("main#gui", "hit", { damage = self.hit })
 		go.delete()
 	end
 end
