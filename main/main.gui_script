@@ -7,6 +7,7 @@ function init(self)
 	self.score_node = gui.get_node("score")
 	self.current_age = constants.AGES[constants.CURRENT_AGE]
 	msg.post(".", "acquire_input_focus")
+	sound.play("main#main_theme", {delay = 0, gain = 1, pan = 0.0, speed = 1.0})
 end
 
 function on_message(self, message_id, message, sender)
