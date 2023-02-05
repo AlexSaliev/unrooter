@@ -6,10 +6,10 @@ OBJECT.AGES = {
 		next = "AGE_2",
 		speed = 600,
 		max_speed = 800,
-		speedup = 20,
+		speedup = 25,
 		minimal_point = 500, 
 		damage_object = { name = "#stone", hit = 1 }, 
-		point_object = { name = "#nokia", points = 100 },
+		point_object = { name = "#nokia", points = 200 },
 		stop_ground = "main:/ground/ground0#ground",
 		start_ground = "main:/ground2/ground0#ground"
 	},
