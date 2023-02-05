@@ -21,6 +21,7 @@ function on_message(self, message_id, message, sender)
 		if self.score >= self.current_age.minimal_point and self.current_age.next ~= "" then
 			msg.post(self.current_age.stop_ground, "update_status", { status = false })
 			msg.post(self.current_age.start_ground, "update_status", { status = true })
+			msg.post("main:/background", "disable")
 
 			print("change age to "..self.current_age.next)
 			self.current_age = constants.AGES[self.current_age.next]

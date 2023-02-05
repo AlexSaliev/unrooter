@@ -42,7 +42,7 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: 255.0
+    y: 1020.0
     z: 0.2
   }
   rotation {
@@ -82,7 +82,7 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -495.0
+    y: 270.0
     z: 0.2
   }
   rotation {
@@ -122,7 +122,7 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -1245.0
+    y: -480.0
     z: 0.2
   }
   rotation {
@@ -162,7 +162,7 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -1995.0
+    y: -1230.0
     z: 0.2
   }
   rotation {
@@ -202,7 +202,7 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -2756.0
+    y: -1991.0
     z: 0.2
   }
   rotation {
@@ -242,7 +242,7 @@ embedded_instances {
   ""
   position {
     x: 275.0
-    y: -3518.0
+    y: -2753.0
     z: 0.2
   }
   rotation {
