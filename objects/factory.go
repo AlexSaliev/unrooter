@@ -108,3 +108,57 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "vase1"
+  type: "factory"
+  data: "prototype: \"/objects/vase1.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "vase2"
+  type: "factory"
+  data: "prototype: \"/objects/vase2.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "vase3"
+  type: "factory"
+  data: "prototype: \"/objects/vase3.go\"\n"
+  "load_dynamically: false\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
