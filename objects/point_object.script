@@ -19,5 +19,6 @@ function on_message(self, message_id, message, sender)
 		go.delete()
 	elseif message_id == hash("speedup") then
 		self.speed = self.speed + message.speedup
+		print("current speed of point object = ".. self.speed)
 	end
 end

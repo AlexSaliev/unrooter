@@ -14,7 +14,7 @@ function init(self)
 	self.speedup = constants.AGES[current_age].speedup
 	self.max_speed = constants.AGES[current_age].max_speed
 	self.components = {}
-	self.timer = timer.delay(5, true, speed_up)
+	self.timer = timer.delay(constants.SPEED_UP_TIMER, true, speed_up)
 	-- make the game deterministic
 	math.randomseed(0)
 	print(msg.url())

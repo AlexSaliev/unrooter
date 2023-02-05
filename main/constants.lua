@@ -1,11 +1,12 @@
 local OBJECT = {}
 OBJECT.CURRENT_AGE = "AGE_1"
+OBJECT.SPEED_UP_TIMER = 1
 OBJECT.AGES = { 
 	AGE_1 = { 
 		next = "AGE_2",
-		speed = 150,
-		max_speed = 350,
-		speedup = 50,
+		speed = 600,
+		max_speed = 800,
+		speedup = 20,
 		minimal_point = 500, 
 		damage_object = { name = "#stone", hit = 1 }, 
 		point_object = { name = "#nokia", points = 100 },
@@ -14,9 +15,9 @@ OBJECT.AGES = {
 	},
 	AGE_2 = { 
 		next = "AGE_3", 
-		speed = 300,
-		max_speed = 700,
-		speedup = 100,
+		speed = 800,
+		max_speed = 1000,
+		speedup = 50,
 		minimal_point = 5000, 
 		damage_object = { name = "#bomb", hit = 2 }, 
 		point_object = { name = "#vase1", points = 2000 },
@@ -25,7 +26,7 @@ OBJECT.AGES = {
 	},
 	AGE_3 = { 
 		next = "", 
-		speed = 700,
+		speed = 1000,
 		max_speed = 1600,
 		speedup = 200,
 		minimal_point = 10000, 
