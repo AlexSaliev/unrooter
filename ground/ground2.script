@@ -28,6 +28,11 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("update_status") then
 		self.pause = message.status
 	end
+	if message_id == hash("update_status") and self.pause == false then
+		for i, p in ipairs(pieces) do 
+			go.delete(p)
+		end
+	end
 	if message_id == hash("gameover") then
 		for i, p in ipairs(pieces) do 
 			go.delete(p)
