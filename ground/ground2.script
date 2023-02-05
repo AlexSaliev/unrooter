@@ -33,6 +33,9 @@ function on_message(self, message_id, message, sender)
 			go.delete(p)
 		end
 	end
+	if message_id == hash("set_speed") then
+		self.speed = message.speed
+	end
 	if message_id == hash("gameover") then
 		for i, p in ipairs(pieces) do 
 			go.delete(p)

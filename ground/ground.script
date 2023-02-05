@@ -7,8 +7,8 @@ function init(self)
 	self.height = 310
 	self.screen_height = 960
 	self.pause =true
+	print(msg.url())
 end
-
 
 function update(self, dt) 
 	if not self.pause then
@@ -30,6 +30,9 @@ function on_message(self, message_id, message, sender)
 		for i, p in ipairs(pieces) do 
 			go.delete(p)
 		end
+	end
+	if message_id == hash("set_speed") then
+		self.speed = message.speed
 	end
 	if message_id == hash("gameover") then
 		for i, p in ipairs(pieces) do 

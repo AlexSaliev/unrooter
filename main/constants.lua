@@ -18,9 +18,9 @@ OBJECT.AGES = {
 		speed = 800,
 		max_speed = 1000,
 		speedup = 50,
-		minimal_point = 5000, 
+		minimal_point = 3000, 
 		damage_object = { name = "#bomb", hit = 2 }, 
-		point_object = { name = "#vase1", points = 2000 },
+		point_object = { name = "#vase1", points = 1000 },
 		stop_ground = "main:/ground2/ground0#ground",
 		start_ground = "main:/ground3/ground0#ground"
 	},

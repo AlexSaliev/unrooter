@@ -32,6 +32,10 @@ function speed_up(self)
 		print("url="..url)
 		msg.post(url, "speedup", { speedup = self.speedup })
 	end
+
+	msg.post("main:/ground/ground0#ground", "set_speed", { speed = self.speed })
+	msg.post("main:/ground2/ground0#ground", "set_speed", { speed = self.speed })
+	msg.post("main:/ground3/ground0#ground", "set_speed", { speed = self.speed })
 end
 
 function on_message(self, message_id, message, sender)
