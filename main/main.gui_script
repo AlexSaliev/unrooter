@@ -47,5 +47,6 @@ function on_message(self, message_id, message, sender)
 		msg.post("main:/shovel#shovel", "gameover")
 		msg.post("background#sprite", "disable")
 		msg.post("default:/main#roots", "gameover")
+		gui.set_enabled(self.score_node, false)
 	end
 end
