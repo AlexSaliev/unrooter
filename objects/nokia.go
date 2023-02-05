@@ -32,6 +32,11 @@ embedded_components {
     z: 0.0
     w: 1.0
   }
+  scale {
+    x: 0.542
+    y: 0.523
+    z: 1.0
+  }
 }
 embedded_components {
   id: "collisionobject"
@@ -60,8 +65,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 66.9265\n"
-  "  data: 39.6555\n"
+  "  data: 36.425\n"
+  "  data: 20.6635\n"
   "  data: 10.0\n"
   "}\n"
   "linear_damping: 0.0\n"
